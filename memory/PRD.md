@@ -69,6 +69,10 @@ aucun avis/statistique/certification inventé.
   desktop (groupe horizontal) et 58-62 px empilés pleine largeur sur mobile
   (écarts 12 px) ; sticky CTA compact distinct (56 px) ; bandeau cookies
   décalé au-dessus du sticky CTA avec safe-area iPhone.
+- CTA d'appel hero simplifié (juillet 2026) : le libellé « Appelez-nous »
+  a été retiré — le bouton affiche uniquement l'icône + le numéro régional
+  (nom accessible aria-label conservé) ; le sticky CTA mobile garde
+  « Appeler ».
 
 ## Vérifications effectuées
 - 12 routes en 200 + 404 réel ; titres/meta/canonical/lang fr uniques.
