@@ -19,11 +19,11 @@ DIST = os.path.join(ROOT, "dist")
 IMG_DIR = os.path.join(DIST, "assets", "img")
 LASTMOD = "2026-07-01"
 
-NAVY = (11, 21, 40)
-NAVY_2 = (19, 35, 63)
-AMBER = (230, 81, 0)
+NAVY = (0, 59, 115)
+NAVY_2 = (10, 77, 140)
+AMBER = (227, 6, 19)
 WHITE = (255, 255, 255)
-MUTED = (148, 163, 184)
+MUTED = (190, 215, 240)
 
 FONT_BOLD = "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf"
 FONT_REG = "/usr/share/fonts/truetype/freefont/FreeSans.ttf"
@@ -50,7 +50,7 @@ def make_og(filename, big_line, sub_line, phone=""):
     draw.rectangle([0, 0, 1200, 14], fill=AMBER)
     draw.rectangle([0, 616, 1200, 630], fill=AMBER)
     # marque
-    draw.rounded_rectangle([64, 56, 136, 128], radius=16, fill=NAVY_2, outline=(34, 52, 90), width=2)
+    draw.rounded_rectangle([64, 56, 136, 128], radius=16, fill=NAVY_2, outline=(26, 90, 158), width=2)
     draw.polygon([(80, 112), (88, 72), (112, 72), (120, 112)], outline=WHITE, width=4)
     brand_font = ImageFont.truetype(FONT_BOLD, 34)
     draw.text((160, 78), "ALLO BRISE DE GLACE", font=brand_font, fill=WHITE)

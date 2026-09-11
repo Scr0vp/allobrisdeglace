@@ -7,9 +7,9 @@ Aucun lien vers les pages régionales dans l'en-tête ou le pied de page.
 
 LOGO_SVG = (
     '<svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">'
-    '<rect width="64" height="64" rx="14" fill="#0B1528"/>'
+    '<rect width="64" height="64" rx="14" fill="#003B73"/>'
     '<path d="M14 44 L22 18 H42 L50 44 Z" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round"/>'
-    '<path d="M32 22 L28.5 30.5 L34 30.5 L30 40" fill="none" stroke="#E65100" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
+    '<path d="M32 22 L28.5 30.5 L34 30.5 L30 40" fill="none" stroke="#E30613" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
     "</svg>"
 )
 

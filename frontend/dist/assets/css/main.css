@@ -4,27 +4,41 @@
    ========================================================================== */
 
 :root {
-  --navy: #0B1528;
-  --navy-2: #13233F;
-  --navy-3: #1B3054;
-  --amber: #E65100;
-  --amber-hover: #CF4500;
-  --amber-soft: #FFF3EA;
-  --emerald: #16A34A;
-  --emerald-hover: #15803D;
-  --ink: #0F172A;
-  --muted: #475569;
-  --faint: #64748B;
-  --line: #E2E8F0;
-  --bg: #F8FAFC;
-  --white: #FFFFFF;
-  --error: #B91C1C;
+  /* Palette de marque — bleu / blanc / rouge (source unique de vérité) */
+  --color-primary: #0057A8;
+  --color-primary-dark: #003B73;
+  --color-primary-light: #EAF4FB;
+  --color-accent: #E30613;
+  --color-accent-hover: #B3050F;
+  --color-white: #FFFFFF;
+  --color-light: #F5F7F9;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-border: #D1D5DB;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5B;
+  /* Alias internes (conservés pour la feuille existante) */
+  --navy: var(--color-primary-dark);
+  --navy-2: #0A4D8C;
+  --navy-3: #0A4D8C;
+  --amber: var(--color-accent);
+  --amber-hover: var(--color-accent-hover);
+  --amber-soft: var(--color-primary-light);
+  --emerald: var(--color-whatsapp);
+  --emerald-hover: var(--color-whatsapp-hover);
+  --ink: var(--color-text);
+  --muted: var(--color-muted);
+  --faint: #6B7280;
+  --line: #D7E3EE;
+  --bg: var(--color-light);
+  --white: var(--color-white);
+  --error: var(--color-accent);
   --font-display: "Chivo", "Arial Black", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
   --radius: 16px;
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06);
-  --shadow-md: 0 10px 30px -12px rgba(11, 21, 40, .25);
-  --shadow-lg: 0 24px 60px -20px rgba(11, 21, 40, .35);
+  --shadow-md: 0 10px 30px -12px rgba(0, 59, 115, .22);
+  --shadow-lg: 0 24px 60px -20px rgba(0, 59, 115, .32);
 }
 
 /* ------------------------------------------------------------------ base */
@@ -101,8 +115,8 @@ a { color: inherit; }
 .btn-lg { padding: 16px 28px; font-size: 1.05rem; }
 .btn-sm { padding: 9px 16px; font-size: .88rem; }
 
-.btn-primary { background: var(--amber); color: var(--white); box-shadow: 0 8px 20px -8px rgba(230, 81, 0, .55); }
-.btn-primary:hover { background: var(--amber-hover); transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(230, 81, 0, .6); }
+.btn-primary { background: var(--amber); color: var(--white); box-shadow: 0 8px 20px -8px rgba(227, 6, 19, .55); }
+.btn-primary:hover { background: var(--amber-hover); transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(227, 6, 19, .6); }
 
 .btn-outline-light { background: transparent; color: var(--white); border: 1.5px solid rgba(255, 255, 255, .4); }
 .btn-outline-light:hover { border-color: var(--white); background: rgba(255, 255, 255, .08); transform: translateY(-2px); }
@@ -307,8 +321,8 @@ a { color: inherit; }
   text-transform: uppercase;
   letter-spacing: .18em;
   color: var(--amber);
-  background: rgba(230, 81, 0, .12);
-  border: 1px solid rgba(230, 81, 0, .45);
+  background: rgba(227, 6, 19, .12);
+  border: 1px solid rgba(227, 6, 19, .45);
   border-radius: 999px;
   padding: 7px 14px;
   margin: 0 0 22px;
@@ -587,7 +601,7 @@ a { color: inherit; }
   overflow: hidden;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-.faq-item[open] { border-color: rgba(230, 81, 0, .5); box-shadow: var(--shadow-sm); }
+.faq-item[open] { border-color: rgba(227, 6, 19, .5); box-shadow: var(--shadow-sm); }
 .faq-item summary {
   display: flex;
   align-items: center;
@@ -624,7 +638,7 @@ a { color: inherit; }
   position: absolute;
   top: 0; right: 0;
   width: 220px; height: 100%;
-  background: linear-gradient(115deg, transparent 40%, rgba(230, 81, 0, .18));
+  background: linear-gradient(115deg, transparent 40%, rgba(227, 6, 19, .18));
   pointer-events: none;
 }
 .final-cta h2 { font-size: clamp(1.5rem, 3.2vw, 2.3rem); font-weight: 900; max-width: 22ch; margin-bottom: 14px; }
@@ -758,7 +772,7 @@ a { color: inherit; }
   font-size: clamp(4rem, 12vw, 8rem);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(230, 81, 0, .8);
+  -webkit-text-stroke: 2px rgba(227, 6, 19, .8);
   margin-bottom: 10px;
 }
 .page-hero--404 .hero-ctas { margin-top: 28px; }
@@ -817,7 +831,7 @@ a { color: inherit; }
   outline: none;
   border-color: var(--amber);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(230, 81, 0, .15);
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, .15);
 }
 .field [aria-invalid="true"] { border-color: var(--error); background: #FEF2F2; }
 .field textarea { resize: vertical; min-height: 120px; }
@@ -945,3 +959,57 @@ a { color: inherit; }
   .sticky-btn { min-height: 56px; }
   .cookie-banner { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 }
+
+/* ============ Identité bleu / blanc / rouge — ajustements composants ==== */
+/* En-tête : bouton téléphone bleu, navigation bleue au survol */
+.header-phone { background: var(--color-primary); }
+.header-phone:hover { background: var(--color-primary-dark); }
+.header-phone .icon, .header-phone:hover .icon { color: var(--color-white); }
+.main-nav a:hover { color: var(--color-primary); }
+.main-nav a::after { background: var(--color-primary); }
+
+/* Boutons : ombres assorties au rouge d'action et au vert WhatsApp */
+.btn-primary { box-shadow: 0 8px 20px -8px rgba(227, 6, 19, .45); }
+.btn-primary:hover { box-shadow: 0 14px 28px -10px rgba(227, 6, 19, .5); }
+.btn-whatsapp { box-shadow: 0 8px 20px -8px rgba(37, 211, 102, .45); }
+
+/* Bandeau défilant : bleu */
+.marquee { background: var(--color-primary); color: var(--color-white); border-color: rgba(255, 255, 255, .18); }
+.marquee-dot { background: var(--color-white); }
+
+/* Icônes et accents bleus */
+.card-icon { background: var(--color-primary-light); color: var(--color-primary); }
+.benefit-index { color: var(--color-primary); }
+.faq-chevron { color: var(--color-primary); }
+.faq-item summary { color: var(--color-primary-dark); }
+.faq-item[open] { border-color: var(--color-primary); }
+.hero-badge .icon { color: var(--color-primary); }
+.trust-list .icon { color: #9CD2F5; }
+.prose .coverage { border-left-color: var(--color-primary); background: var(--color-primary-light); }
+.prose--legal a { color: var(--color-primary); }
+
+/* Sections alternées : bleu très clair */
+.section--alt { background: var(--color-primary-light); }
+
+/* Formulaire : focus bleu (erreurs et envoi restent rouges via .btn-primary) */
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 87, 168, .15);
+}
+.checkbox input { accent-color: var(--color-primary); }
+:focus-visible { outline-color: var(--color-primary); }
+
+/* Menu mobile : panneau blanc, liens foncés, survol bleu */
+.mobile-menu { background: var(--color-white); border-bottom: 1px solid var(--line); }
+.mobile-menu a { color: var(--color-text); border-bottom-color: var(--line); }
+.mobile-menu a:hover, .mobile-menu a:focus-visible { color: var(--color-primary); }
+.menu-toggle .bar { background: var(--color-primary-dark); }
+.menu-toggle:hover { border-color: var(--color-primary); }
+
+/* Pied de page : bleu foncé */
+.site-footer { background: var(--color-primary-dark); }
+
+/* Décors : rouge en accent maîtrisé uniquement */
+.eyebrow { color: #FF8A90; background: rgba(227, 6, 19, .14); border-color: rgba(227, 6, 19, .45); }
+.notfound-code { -webkit-text-stroke-color: rgba(227, 6, 19, .85); }
+.final-cta::after { background: linear-gradient(115deg, transparent 40%, rgba(227, 6, 19, .15)); }
