@@ -73,6 +73,13 @@ aucun avis/statistique/certification inventé.
   a été retiré — le bouton affiche uniquement l'icône + le numéro régional
   (nom accessible aria-label conservé) ; le sticky CTA mobile garde
   « Appeler ».
+- Nouvelle palette bleu/blanc/rouge (juillet 2026) : bleu #0057A8 / bleu
+  foncé #003B73 / bleu clair #EAF4FB / rouge accent #E30613 / WhatsApp
+  #25D366, variables centralisées (--color-*) ; logo, favicon et images OG
+  régénérés ; orange entièrement supprimé.
+- Dépôt GitHub (juillet 2026) : https://github.com/Scr0vp/allobrisdeglace
+  branche main, commit poussé 8f25ce4 ; aucun secret tracké ; deploy/
+  contient Nginx, systemd et la migration MariaDB 001.
 
 ## Vérifications effectuées
 - 12 routes en 200 + 404 réel ; titres/meta/canonical/lang fr uniques.
