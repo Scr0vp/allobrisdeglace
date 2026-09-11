@@ -64,6 +64,11 @@ aucun avis/statistique/certification inventé.
   par lien, clic extérieur, Escape ; aria-expanded/aria-label ; breakpoint
   768 px ; desktop inchangé. Correction du débordement 320 px (min-width
   des colonnes du hero).
+- Système de CTA hero raffiné (juillet 2026) : bouton d'appel à deux lignes
+  (icône + « Appelez-nous » + numéro en plus grand), hauteurs 60-62 px
+  desktop (groupe horizontal) et 58-62 px empilés pleine largeur sur mobile
+  (écarts 12 px) ; sticky CTA compact distinct (56 px) ; bandeau cookies
+  décalé au-dessus du sticky CTA avec safe-area iPhone.
 
 ## Vérifications effectuées
 - 12 routes en 200 + 404 réel ; titres/meta/canonical/lang fr uniques.

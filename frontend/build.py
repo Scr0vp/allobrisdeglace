@@ -255,7 +255,7 @@ def render_region(r):
       <h1 class="hero-title" data-testid="hero-title" aria-label="{esc(r['h1_aria'])}">{hero_lines(r['h1_lines'])}</h1>
       <p class="hero-sub reveal-now" style="--d:.42s">{esc(r['hero_sub'])}</p>
       <div class="hero-ctas reveal-now" style="--d:.52s">
-        <a class="btn btn-primary btn-lg" href="tel:{r['phone_tel']}" data-testid="hero-call-cta" data-track="call">{tpl.ICON_PHONE}<span>Appelez-nous</span><strong>{esc(r['phone_display'])}</strong></a>
+        <a class="btn btn-primary btn-hero-call" href="tel:{r['phone_tel']}" data-testid="hero-call-cta" data-track="call" aria-label="Appelez-nous au {esc(r['phone_display'])}">{tpl.ICON_PHONE}<span class="cta-lines"><span class="cta-label">Appelez-nous</span><strong class="cta-number">{esc(r['phone_display'])}</strong></span></a>
         <a class="btn btn-outline-light btn-lg" href="/contactez-nous/" data-testid="hero-quote-cta" data-track="quote"><span>Demander un devis</span></a>
         {wa_hero}
       </div>
@@ -328,7 +328,7 @@ def render_home():
       <p class="hero-sub reveal-now" style="--d:.42s">Allo Brise de Glace vous accompagne pour la réparation et le remplacement de pare-brise, vitres latérales et lunettes arrière. Un interlocuteur unique, des conseils adaptés et un devis clair avant toute intervention.</p>
       <div class="hero-ctas reveal-now" style="--d:.52s">
         <a class="btn btn-primary btn-lg" href="/contactez-nous/" data-testid="hero-contact-cta" data-track="quote"><span>Contactez-nous</span></a>
-        <a class="btn btn-outline-light btn-lg" href="tel:{data.MAIN_PHONE_TEL}" data-testid="hero-call-cta" data-track="call">{tpl.ICON_PHONE}<strong>{esc(data.MAIN_PHONE_DISPLAY)}</strong></a>
+        <a class="btn btn-outline-light btn-hero-call" href="tel:{data.MAIN_PHONE_TEL}" data-testid="hero-call-cta" data-track="call" aria-label="Appelez-nous au {esc(data.MAIN_PHONE_DISPLAY)}">{tpl.ICON_PHONE}<span class="cta-lines"><span class="cta-label">Appelez-nous</span><strong class="cta-number">{esc(data.MAIN_PHONE_DISPLAY)}</strong></span></a>
       </div>
       {trust_list()}
     </div>
