@@ -12,6 +12,29 @@ remplacement de pare-brise et vitrages automobiles. 100 % en français.
 
 ---
 
+## 0. Récupérer le projet (GitHub)
+
+```bash
+git clone <URL_DU_DEPOT> allobrisdeglace
+cd allobrisdeglace
+cp .env.example backend/.env   # renseigner les valeurs (aucun secret dans le dépôt)
+```
+
+Le site statique complet est déjà généré dans `frontend/dist/` (inclus dans le
+dépôt). Pour le régénérer après modification du contenu :
+`cd frontend && python3 build.py`.
+
+Fichiers de déploiement fournis dans `deploy/` :
+- `deploy/nginx/allobrisdeglace.conf` — configuration Nginx de production
+- `deploy/systemd/allobrisdeglace.service` — service systemd du backend
+- `deploy/mariadb/001_create_leads.sql` — migration MariaDB (table `leads`)
+
+Note : `frontend/src/`, `craco.config.js`, `tailwind.config.js` sont des
+reliques du gabarit initial de l'environnement de développement et ne sont
+PAS utilisés par le site (frontend = HTML/CSS/JS vanilla généré dans `dist/`).
+
+---
+
 ## 1. Structure du projet
 
 ```
