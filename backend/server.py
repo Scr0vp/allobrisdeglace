@@ -170,7 +170,8 @@ async def submit_contact(payload: ContactPayload, request: Request):
         logger.exception("Échec d'enregistrement du lead en base")
         return JSONResponse(status_code=500, content={"ok": False, "message": MSG_ERROR})
 
-    sent, error = await asyncio.to_thread(send_lead_email, lead)
+    loop = asyncio.get_running_loop()
+    sent, error = await loop.run_in_executor(None, send_lead_email, lead)
     if sent:
         await lead_store.set_email_status(
             lead_id, "sent", datetime.now(timezone.utc).isoformat()

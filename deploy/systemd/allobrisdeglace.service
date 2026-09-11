@@ -1,17 +1,18 @@
 # ALLO BRISE DE GLACE — service systemd pour le backend FastAPI
 # Emplacement : /etc/systemd/system/allobrisdeglace.service
-# Puis : sudo systemctl enable --now allobrisdeglace
 
 [Unit]
 Description=API Allo Brise de Glace
-After=network.target mariadb.service
+After=network.target mariadb.service exim4.service
+Wants=mariadb.service
 
 [Service]
-WorkingDirectory=/var/www/allobrisdeglace/backend
-ExecStart=/var/www/allobrisdeglace/.venv/bin/uvicorn server:app --host 127.0.0.1 --port 8001
+Type=simple
+WorkingDirectory=/var/www/allobrisdeglace.com/backend
+ExecStart=/var/www/allobrisdeglace.com/.venv/bin/uvicorn server:app --host 127.0.0.1 --port 8001
+Environment=PYTHONUNBUFFERED=1
 Restart=always
 RestartSec=3
-Environment=PYTHONUNBUFFERED=1
 
 [Install]
 WantedBy=multi-user.target
