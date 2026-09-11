@@ -108,10 +108,19 @@ def header(phone_display, phone_tel):
       <a href="/" data-testid="nav-accueil">Accueil</a>
       <a href="/contactez-nous/" data-testid="nav-contact">Contactez-nous</a>
     </nav>
-    <a class="header-phone" href="tel:{phone_tel}" data-testid="header-phone-cta" data-track="call">
+    <a class="header-phone" href="tel:{phone_tel}" data-testid="header-phone-cta" data-track="call" aria-label="Appeler le {phone_display}">
       {ICON_PHONE}<span class="header-phone-number">{phone_display}</span>
     </a>
+    <button type="button" class="menu-toggle" data-testid="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
   </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile" data-testid="mobile-menu" hidden>
+    <a href="/" data-testid="mobile-nav-accueil">Accueil</a>
+    <a href="/contactez-nous/" data-testid="mobile-nav-contact">Contactez-nous</a>
+    <a href="/mentions-legales-cgu/" data-testid="mobile-nav-legal">Mentions légales / CGU</a>
+  </nav>
 </header>
 """
 

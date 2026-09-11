@@ -58,6 +58,12 @@ aucun avis/statistique/certification inventé.
 - sitemap.xml (11 URLs), robots.txt, favicon SVG, 404 avec vrai statut 404.
 - README de déploiement complet (Ubuntu, Nginx, systemd, Certbot, Exim,
   migration MariaDB, suivi Google, dépannage).
+- Header mobile repensé (juillet 2026) : logo à gauche, bouton téléphone
+  circulaire 44 px + menu hamburger à droite ; panneau navy (Accueil,
+  Contactez-nous, Mentions légales / CGU — aucun lien régional) ; fermeture
+  par lien, clic extérieur, Escape ; aria-expanded/aria-label ; breakpoint
+  768 px ; desktop inchangé. Correction du débordement 320 px (min-width
+  des colonnes du hero).
 
 ## Vérifications effectuées
 - 12 routes en 200 + 404 réel ; titres/meta/canonical/lang fr uniques.
