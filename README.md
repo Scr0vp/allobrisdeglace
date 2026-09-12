@@ -267,7 +267,7 @@ Certbot ; adaptez-les si votre configuration diffère.
 
 ```bash
 sudo dpkg-reconfigure exim4-config   # type : « internet site » (distribution directe)
-echo "Test allobrisdeglace" | mail -s "Test Exim" contact@allobrisdeglace.com
+echo "Test allobrisdeglace" | mail -s "Test Exim" serviceclient@allobrisdeglace.com
 sudo tail -f /var/log/exim4/mainlog
 ```
 
