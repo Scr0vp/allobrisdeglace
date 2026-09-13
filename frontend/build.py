@@ -470,8 +470,6 @@ def render_contact():
         <a class="btn btn-primary btn-lg" href="tel:{data.MAIN_PHONE_TEL}" data-testid="contact-call-cta" data-track="call">{tpl.ICON_PHONE}<strong>{esc(data.MAIN_PHONE_DISPLAY)}</strong></a>
       </div>
       <div class="contact-card">
-        <h2>Siège</h2>
-        <p>Neutra Group<br>200, rue de la Croix Nivert<br>75015 Paris</p>
       </div>
       <div class="contact-card">
         <h2>Votre demande</h2>
