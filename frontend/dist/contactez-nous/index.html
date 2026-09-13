@@ -21,6 +21,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/main.css">
 
+<style>
+@media (min-width: 900px) {
+  body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
+}
+.sticky-cta .sticky-btn-call { flex: 1.3; }
+.sticky-cta .sticky-btn-wa { flex: .7; }
+@media (max-width: 899px) {
+  body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
+}
+.footer-regions { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); }
+.footer-regions-title { margin: 0 0 10px; font-weight: 700; }
+.footer-regions-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.footer-regions-links a { color: inherit; text-decoration: none; }
+.footer-regions-links a:hover { text-decoration: underline; }
+</style>
+
+
 </head>
 <body data-page="contact" class="has-sticky">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -35,7 +52,7 @@
       <a href="/contactez-nous/" data-testid="nav-contact">Contactez-nous</a>
     </nav>
     <a class="header-phone" href="tel:+330189703561" data-testid="header-phone-cta" data-track="call" aria-label="Appeler le 01 89 70 35 61">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="header-phone-number">01 89 70 35 61</span>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="header-phone-number">01 89 70 35 61</span>
     </a>
     <button type="button" class="menu-toggle" data-testid="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
       <span class="bar"></span>
@@ -60,7 +77,7 @@
       <div class="contact-card">
         <h2>Par téléphone</h2>
         <p>La voie la plus directe pour décrire votre besoin.</p>
-        <a class="btn btn-primary btn-lg" href="tel:+330189703561" data-testid="contact-call-cta" data-track="call"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>01 89 70 35 61</strong></a>
+        <a class="btn btn-primary btn-lg" href="tel:+330189703561" data-testid="contact-call-cta" data-track="call"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"/></svg><strong>01 89 70 35 61</strong></a>
       </div>
       <div class="contact-card">
         <h2>Votre demande</h2>
@@ -147,12 +164,16 @@
       <a href="/mentions-legales-cgu/" data-testid="footer-legal-link">Mentions légales / CGU</a>
     </nav>
   </div>
+  <div class="footer-regions">
+    <p class="footer-regions-title">Nos zones d’intervention</p>
+    <nav class="footer-regions-links" aria-label="Zones d’intervention"><a href="/ile-de-france/">Île-de-France</a><a href="/nord-ouest/">Nord-Ouest</a><a href="/nord-est/">Nord-Est</a><a href="/sud-ouest/">Sud-Ouest</a><a href="/sud-est/">Sud-Est</a><a href="/geneve/">Genève</a><a href="/montreal/">Montréal</a><a href="/belgique/">Belgique</a></nav>
+  </div>
   <div class="footer-legal">
     <p>© 2026 Allo Bris de Glace — Neutra Group. Tous droits réservés.</p>
   </div>
 </footer>
 <div class="sticky-cta" data-testid="sticky-cta-bar">
-  <a class="sticky-btn sticky-btn-call sticky-btn-full" href="tel:+330189703561" data-testid="sticky-call-cta" data-track="call"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Appeler le 01 89 70 35 61</span></a>
+  <a class="sticky-btn sticky-btn-call sticky-btn-full" href="tel:+330189703561" data-testid="sticky-call-cta" data-track="call"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Appeler le 01 89 70 35 61</span></a>
 </div>
 <div class="cookie-banner" data-testid="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies" hidden>
   <p class="cookie-text">Nous utilisons des cookies de mesure d'audience et de suivi publicitaire, uniquement avec votre accord. Vous pouvez accepter ou refuser : le site reste pleinement utilisable dans les deux cas.</p>
@@ -165,5 +186,50 @@
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/contact.js" defer></script>
+<script>
+(function () {
+  var waText = "Bonjour, j'ai un impact sur mon pare-brise, voici une photo";
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function (link) {
+    try {
+      var url = new URL(link.href, window.location.origin);
+      if (!url.searchParams.get('text')) url.searchParams.set('text', waText);
+      link.href = url.toString();
+    } catch (e) {}
+  });
+
+  var page = document.body && document.body.getAttribute('data-page');
+  var copy = {
+    'ile-de-france': {services: 'Interventions adaptées au rythme francilien', servicesSub: 'En zone urbaine dense comme en grande couronne, nous vous orientons vers la solution de vitrage adaptée à votre véhicule.', why: 'Un accompagnement pensé pour vos trajets quotidiens', steps: 'Un parcours simple, même quand le bris de glace tombe au mauvais moment', stepsSub: 'Décrivez les dégâts, recevez une orientation claire et convenez du prochain créneau avec notre équipe.'},
+    'nord-ouest': {services: 'Vitrage automobile pour les routes du Nord-Ouest', servicesSub: 'De l’impact sur autoroute au vitrage brisé après une intempérie, les prestations sont adaptées au type de dommage.', why: 'Une prise en charge claire dans le Nord-Ouest', steps: 'De votre premier appel à la restitution du véhicule', stepsSub: 'Quelques informations sur le véhicule et les dégâts suffisent pour préparer la suite.'},
+    'nord-est': {services: 'Pare-brise et vitrages face aux conditions du Nord-Est', servicesSub: 'Les variations de température et les longs trajets peuvent fragiliser un impact : nous vous aidons à choisir la bonne solution.', why: 'Des conseils adaptés aux besoins du Nord-Est', steps: 'Trois repères pour avancer sans perdre de temps', stepsSub: 'Identification du vitrage, estimation de la solution et organisation de l’intervention.'},
+    'sud-ouest': {services: 'Réparation et remplacement dans le Sud-Ouest', servicesSub: 'Autoroute, routes départementales ou stationnement : chaque dommage de vitrage est évalué selon sa nature et son emplacement.', why: 'Un service pratique pour vos déplacements', steps: 'Une organisation claire avant l’intervention', stepsSub: 'Nous recueillons les informations utiles avant de convenir avec vous de la suite.'},
+    'sud-est': {services: 'Vitrage automobile dans le Sud-Est', servicesSub: 'Impact, fissure ou vitre brisée : la prise en charge est orientée selon le vitrage concerné et les équipements du véhicule.', why: 'L’essentiel pour reprendre la route sereinement', steps: 'Un accompagnement en trois temps', stepsSub: 'Contact, analyse de la demande puis organisation du rendez-vous selon votre situation.'},
+    'geneve': {services: 'Pare-brise et vitrage autour de Genève', servicesSub: 'Pour les trajets transfrontaliers et les déplacements quotidiens, nous vous indiquons la solution adaptée au vitrage concerné.', why: 'Une communication simple autour de Genève', steps: 'Comment organiser votre demande', stepsSub: 'Décrivez le dommage et votre véhicule : nous vous indiquons les prochaines étapes.'},
+    'montreal': {services: 'Réparation et remplacement de vitrage à Montréal', servicesSub: 'Les vitrages automobiles endommagés sont orientés vers la solution adaptée au véhicule et au type de dommage.', why: 'Un accompagnement adapté à votre véhicule', steps: 'Du signalement du dommage au rendez-vous', stepsSub: 'Un premier échange permet de préciser le besoin avant l’organisation de l’intervention.'},
+    'belgique': {services: 'Vitrage automobile en Belgique', servicesSub: 'Pare-brise, vitres latérales et lunette arrière : nous vous aidons à identifier la prestation correspondant au dommage.', why: 'Une prise en charge lisible en Belgique', steps: 'Une démarche en trois étapes', stepsSub: 'Votre demande, l’orientation adaptée et la confirmation des modalités d’intervention.'}
+  };
+
+  if (page && page !== 'accueil' && page !== 'contact') {
+    var c = copy[page];
+    if (c) {
+      var s = document.querySelector('[data-testid="services-section"]');
+      var w = document.querySelector('[data-testid="why-section"]');
+      var p = document.querySelector('[data-testid="process-section"]');
+      if (s) { var st = s.querySelector('.section-title'); var ss = s.querySelector('.section-sub'); if (st) st.textContent = c.services; if (ss) ss.textContent = c.servicesSub; }
+      if (w) { var wt = w.querySelector('.section-title'); if (wt) wt.textContent = c.why; }
+      if (p) { var pt = p.querySelector('.section-title'); var ps = p.querySelector('.section-head'); if (pt) pt.textContent = c.steps; if (ps && c.stepsSub) { var old = ps.querySelector('.section-sub'); if (old) old.textContent = c.stepsSub; else { var sub = document.createElement('p'); sub.className = 'section-sub'; sub.textContent = c.stepsSub; ps.appendChild(sub); } } }
+    }
+
+    var seo = document.querySelector('[data-testid="seo-section"]');
+    if (seo && !document.querySelector('[data-testid="regional-modalities"]')) {
+      var section = document.createElement('section');
+      section.className = 'section section--seo regional-modalities-section';
+      section.setAttribute('data-testid', 'regional-modalities');
+      section.innerHTML = '<div class="section-head reveal"><p class="chapter"><span class="chapter-num">05B</span><span class="chapter-label">Prise de rendez-vous</span></p><h2 class="section-title">Délai et modalités d’intervention</h2></div><div class="prose reveal"><p>Le délai et la modalité d’intervention sont confirmés lors de la prise de rendez-vous selon votre zone, le type de vitrage, le véhicule et la disponibilité.</p><p>Lors de votre appel, nous vous indiquons le créneau proposé et les informations utiles avant l’intervention.</p></div>';
+      seo.parentNode.insertBefore(section, seo.nextSibling);
+    }
+  }
+})();
+</script>
 </body>
 </html>

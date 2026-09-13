@@ -17,7 +17,7 @@ import templates as tpl
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
 IMG_DIR = os.path.join(DIST, "assets", "img")
-LASTMOD = "2026-07-01"
+LASTMOD = "2026-09-13"
 
 NAVY = (0, 59, 115)
 NAVY_2 = (10, 77, 140)

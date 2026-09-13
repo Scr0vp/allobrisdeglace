@@ -8,7 +8,7 @@ Aucune statistique, avis, certification ou affirmation invérifiable.
 
 SITE_NAME = "Allo Bris de Glace"
 BASE_URL = "https://allobrisdeglace.com"
-WHATSAPP_URL = "https://wa.me/33756861576"
+WHATSAPP_URL = "https://wa.me/33756861576?text=Bonjour%2C%20j%27ai%20un%20impact%20sur%20mon%20pare-brise%2C%20voici%20une%20photo"
 
 # Numéro de la ligne Île-de-France, utilisé comme ligne principale sur les
 # pages non régionales (accueil, contact, mentions légales).
