@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Fragments HTML partagés — ALLO BRISE DE GLACE.
+"""Fragments HTML partagés — ALLO BRIS DE GLACE.
 
 En-tête, pied de page, barre d'appel mobile, bannière cookies, icônes.
 Aucun lien vers les pages régionales dans l'en-tête ou le pied de page.
@@ -79,7 +79,7 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{og_locale}">
-<meta property="og:site_name" content="Allo Brise de Glace">
+<meta property="og:site_name" content="Allo Bris de Glace">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
@@ -100,9 +100,9 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 def header(phone_display, phone_tel):
     return f"""<header class="site-header" data-testid="site-header">
   <div class="header-inner">
-    <a class="brand" href="/" data-testid="brand-link" aria-label="Allo Brise de Glace — Accueil">
+    <a class="brand" href="/" data-testid="brand-link" aria-label="Allo Bris de Glace — Accueil">
       {LOGO_SVG}
-      <span class="brand-name">Allo <strong>Brise de Glace</strong></span>
+      <span class="brand-name">Allo <strong>Bris de Glace</strong></span>
     </a>
     <nav class="main-nav" aria-label="Navigation principale">
       <a href="/" data-testid="nav-accueil">Accueil</a>
@@ -131,7 +131,7 @@ def footer():
     <div class="footer-brand">
       """ + LOGO_SVG + """
       <div>
-        <p class="footer-brand-name">Allo <strong>Brise de Glace</strong></p>
+        <p class="footer-brand-name">Allo <strong>Bris de Glace</strong></p>
         <p class="footer-baseline">Réparation et remplacement de pare-brise et vitrages automobiles.</p>
       </div>
     </div>
@@ -141,7 +141,7 @@ def footer():
     </nav>
   </div>
   <div class="footer-legal">
-    <p>© 2026 Allo Brise de Glace — Neutra Group. Tous droits réservés.</p>
+    <p>© 2026 Allo Bris de Glace — Neutra Group. Tous droits réservés.</p>
   </div>
 </footer>
 """

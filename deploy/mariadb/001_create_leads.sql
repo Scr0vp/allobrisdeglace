@@ -1,4 +1,4 @@
--- ALLO BRISE DE GLACE — migration MariaDB 001 : table des demandes de contact
+-- ALLO BRIS DE GLACE — migration MariaDB 001 : table des demandes de contact
 -- Usage : mysql -u root -p < deploy/mariadb/001_create_leads.sql
 -- Remplacez MOT_DE_PASSE_FORT avant exécution.
 

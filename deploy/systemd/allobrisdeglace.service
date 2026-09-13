@@ -1,8 +1,8 @@
-# ALLO BRISE DE GLACE — service systemd pour le backend FastAPI
+# ALLO BRIS DE GLACE — service systemd pour le backend FastAPI
 # Emplacement : /etc/systemd/system/allobrisdeglace.service
 
 [Unit]
-Description=API Allo Brise de Glace
+Description=API Allo Bris de Glace
 After=network.target mariadb.service exim4.service
 Wants=mariadb.service
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Générateur du site statique ALLO BRISE DE GLACE.
+"""Générateur du site statique ALLO BRIS DE GLACE.
 
 Usage : python3 build.py
 Produit les pages HTML dans dist/ (10 pages + accueil + 404), le sitemap.xml
@@ -53,7 +53,7 @@ def make_og(filename, big_line, sub_line, phone=""):
     draw.rounded_rectangle([64, 56, 136, 128], radius=16, fill=NAVY_2, outline=(26, 90, 158), width=2)
     draw.polygon([(80, 112), (88, 72), (112, 72), (120, 112)], outline=WHITE, width=4)
     brand_font = ImageFont.truetype(FONT_BOLD, 34)
-    draw.text((160, 78), "ALLO BRISE DE GLACE", font=brand_font, fill=WHITE)
+    draw.text((160, 78), "ALLO BRIS DE GLACE", font=brand_font, fill=WHITE)
     # grand titre
     big_font = _fit_font(draw, big_line, 92, 1050)
     draw.text((64, 250), big_line, font=big_font, fill=WHITE)
@@ -204,6 +204,39 @@ def jsonld_scripts(*objects):
 
 
 # ---------------------------------------------------------------- régions
+def regional_links(current_slug):
+    """Internal links between regional landing pages for crawlability and SEO."""
+    items = []
+
+    for region in data.REGIONS:
+        slug = region["slug"]
+
+        if slug == current_slug:
+            continue
+
+        items.append(
+            f'<a href="/{slug}/" class="regional-link">{esc(region["name"])}</a>'
+        )
+
+    return f"""
+<section class="section section--seo regional-links-section" data-testid="regional-links-section">
+  <div class="section-head reveal">
+    <p class="chapter">
+      <span class="chapter-num">06</span>
+      <span class="chapter-label">Nos zones d'intervention</span>
+    </p>
+    <h2 class="section-title">Nos autres zones d'intervention</h2>
+  </div>
+  <div class="prose reveal">
+    <p>Retrouvez également nos informations sur la réparation et le remplacement de vitrage automobile dans les autres zones desservies par Allo Bris de Glace.</p>
+    <p class="regional-links-list">
+      {" · ".join(items)}
+    </p>
+  </div>
+</section>
+"""
+
+
 def render_region(r):
     slug = r["slug"]
     canonical = f"{data.BASE_URL}/{slug}/"
@@ -214,7 +247,7 @@ def render_region(r):
     business = {
         "@context": "https://schema.org",
         "@type": "AutomotiveBusiness",
-        "name": f"Allo Brise de Glace — {r['name']}",
+        "name": f"Allo Bris de Glace — {r['name']}",
         "url": canonical,
         "telephone": r["phone_tel"],
         "image": og_image,
@@ -243,7 +276,11 @@ def render_region(r):
         )
 
     seo_paras = "".join(f"<p>{esc(p)}</p>" for p in r["seo_paras"])
-    hero_img = data.img_url(r["hero_img"], 1600)
+    hero_img = (
+        data.BASE_URL + r["hero_img"]
+        if r["hero_img"].startswith("/")
+        else data.img_url(r["hero_img"], 1600)
+    )
     hero_alt = data.IMG_ALTS.get(r["hero_img"], "Intervention sur un vitrage automobile")
 
     body = f"""<main id="contenu">
@@ -262,7 +299,10 @@ def render_region(r):
       {trust_list()}
     </div>
     <figure class="hero-media reveal-now" style="--d:.3s" data-parallax>
-      <img src="{hero_img}" alt="{esc(hero_alt)}" width="1600" height="1067" fetchpriority="high" decoding="async">
+      <picture>
+        <source srcset="{hero_img.rsplit('.', 1)[0]}.webp" type="image/webp">
+        <img src="{hero_img}" alt="{esc(hero_alt)}" width="1376" height="768" fetchpriority="high" decoding="async">
+      </picture>
       <figcaption class="hero-badge">{tpl.ICON_CHECK}<span>Réparation &amp; remplacement de vitrage automobile</span></figcaption>
     </figure>
   </div>
@@ -282,6 +322,7 @@ def render_region(r):
   </div>
 </section>
 {faq_section(r['faq'], "05")}
+{regional_links(slug)}
 {final_cta(r['phone_display'], r['phone_tel'], r['whatsapp'])}
 </main>
 """
@@ -307,17 +348,17 @@ def render_region(r):
 def render_home():
     canonical = f"{data.BASE_URL}/"
     og_image = f"{data.BASE_URL}/assets/img/og-accueil.png"
-    title = esc("Allo Brise de Glace — Pare-brise & vitrage automobile")
-    desc = esc("Allo Brise de Glace : réparation et remplacement de pare-brise, vitres latérales et lunettes arrière. Interlocuteur unique, conseils adaptés, devis clair.")
+    title = esc("Allo Bris de Glace — Pare-brise & vitrage automobile")
+    desc = esc("Allo Bris de Glace : réparation et remplacement de pare-brise, vitres latérales et lunettes arrière. Interlocuteur unique, conseils adaptés, devis clair.")
     org = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Allo Brise de Glace",
+        "name": "Allo Bris de Glace",
         "url": canonical,
         "logo": f"{data.BASE_URL}/favicon.svg",
     }
     lines = ["Réparation &amp; ", "remplacement ", "de vitrage automobile"]
-    hero_img = data.img_url(data.IMG_TECH, 1600)
+    hero_img = data.BASE_URL + data.IMG_HERO_REPAIR
     body = f"""<main id="contenu">
 <section class="hero hero--home" data-testid="hero-section">
   <span class="hero-watermark" aria-hidden="true">Bris de glace</span>
@@ -325,7 +366,7 @@ def render_home():
     <div class="hero-copy">
       <p class="eyebrow reveal-now" style="--d:.05s">Spécialiste du vitrage automobile</p>
       <h1 class="hero-title" data-testid="hero-title" aria-label="Réparation et remplacement de vitrage automobile">{hero_lines(lines)}</h1>
-      <p class="hero-sub reveal-now" style="--d:.42s">Allo Brise de Glace vous accompagne pour la réparation et le remplacement de pare-brise, vitres latérales et lunettes arrière. Un interlocuteur unique, des conseils adaptés et un devis clair avant toute intervention.</p>
+      <p class="hero-sub reveal-now" style="--d:.42s">Allo Bris de Glace vous accompagne pour la réparation et le remplacement de pare-brise, vitres latérales et lunettes arrière. Un interlocuteur unique, des conseils adaptés et un devis clair avant toute intervention.</p>
       <div class="hero-ctas reveal-now" style="--d:.52s">
         <a class="btn btn-primary btn-lg" href="/contactez-nous/" data-testid="hero-contact-cta" data-track="quote"><span>Contactez-nous</span></a>
         <a class="btn btn-outline-light btn-hero-call" href="tel:{data.MAIN_PHONE_TEL}" data-testid="hero-call-cta" data-track="call" aria-label="Appeler le {esc(data.MAIN_PHONE_DISPLAY)}">{tpl.ICON_PHONE}<strong class="cta-number">{esc(data.MAIN_PHONE_DISPLAY)}</strong></a>
@@ -333,7 +374,10 @@ def render_home():
       {trust_list()}
     </div>
     <figure class="hero-media reveal-now" style="--d:.3s" data-parallax>
-      <img src="{hero_img}" alt="{esc(data.IMG_ALTS[data.IMG_TECH])}" width="1600" height="1067" fetchpriority="high" decoding="async">
+      <picture>
+        <source srcset="{hero_img.rsplit('.', 1)[0]}.webp" type="image/webp">
+        <img src="{hero_img}" alt="{esc(data.IMG_ALTS[data.IMG_HERO_REPAIR])}" width="1376" height="768" fetchpriority="high" decoding="async">
+      </picture>
       <figcaption class="hero-badge">{tpl.ICON_CHECK}<span>Pare-brise · vitres latérales · lunettes arrière</span></figcaption>
     </figure>
   </div>
@@ -373,8 +417,8 @@ def _field(field_id, label, input_html, required=True):
 def render_contact():
     canonical = f"{data.BASE_URL}/contactez-nous/"
     og_image = f"{data.BASE_URL}/assets/img/og-contact.png"
-    title = esc("Contactez-nous — Allo Brise de Glace")
-    desc = esc("Contactez Allo Brise de Glace pour la réparation ou le remplacement de votre pare-brise ou vitrage automobile. Formulaire de demande et réponse dans les meilleurs délais.")
+    title = esc("Contactez-nous — Allo Bris de Glace")
+    desc = esc("Contactez Allo Bris de Glace pour la réparation ou le remplacement de votre pare-brise ou vitrage automobile. Formulaire de demande et réponse dans les meilleurs délais.")
 
     region_opts = '<option value="" disabled selected>Sélectionnez votre région</option>' + "".join(
         f"<option value=\"{esc(o)}\">{esc(o)}</option>" for o in data.REGION_OPTIONS
@@ -459,7 +503,7 @@ def render_contact():
 def render_legal():
     canonical = f"{data.BASE_URL}/mentions-legales-cgu/"
     og_image = f"{data.BASE_URL}/assets/img/og-default.png"
-    title = esc("Mentions légales / CGU — Allo Brise de Glace")
+    title = esc("Mentions légales / CGU — Allo Bris de Glace")
     desc = esc("Mentions légales et conditions générales d'utilisation du site allobrisdeglace.com, édité par Neutra Group.")
     body = f"""<main id="contenu">
 <section class="page-hero" data-testid="legal-hero">
@@ -474,11 +518,9 @@ def render_legal():
       <li>SIREN&nbsp;: 101 724 83</li>
       <li>Siège social&nbsp;: 200, rue de la Croix Nivert, 75015 Paris</li>
       <li>Capital social&nbsp;: 25&nbsp;000&nbsp;€</li>
-      <li>Directeur de la publication&nbsp;: [À compléter]</li>
-      <li>Hébergeur du site&nbsp;: [À compléter]</li>
     </ul>
     <h2>Informations sur l'entreprise</h2>
-    <p>Allo Brise de Glace est une enseigne de Neutra Group spécialisée dans la réparation et le remplacement de pare-brise et de vitrages automobiles. Pour toute question, utilisez la page <a href="/contactez-nous/">Contactez-nous</a>.</p>
+    <p>Allo Bris de Glace est une enseigne de Neutra Group spécialisée dans la réparation et le remplacement de pare-brise et de vitrages automobiles. Pour toute question, utilisez la page <a href="/contactez-nous/">Contactez-nous</a>.</p>
     <h2>Conditions générales d'utilisation</h2>
     <p>L'accès au site allobrisdeglace.com implique l'acceptation des présentes conditions. Le site a pour objet de présenter les services de réparation et de remplacement de vitrages automobiles et de permettre aux visiteurs de transmettre une demande de contact. Les informations présentées sont fournies à titre indicatif et peuvent évoluer.</p>
     <h2>Responsabilité</h2>
@@ -515,7 +557,7 @@ def render_404():
     canonical = f"{data.BASE_URL}/404"
     og_image = f"{data.BASE_URL}/assets/img/og-default.png"
     page = (
-        tpl.head("Page introuvable — Allo Brise de Glace",
+        tpl.head("Page introuvable — Allo Bris de Glace",
                  "La page que vous recherchez n'existe pas ou a été déplacée.",
                  canonical, og_image, page_key="404")
         .replace('<meta name="robots" content="index, follow">',
@@ -575,7 +617,7 @@ def main():
         )
     make_og("og-accueil.png", "Pare-brise & vitrage", "Réparation et remplacement de vitrage automobile", data.MAIN_PHONE_DISPLAY)
     make_og("og-contact.png", "Contactez-nous", "Réparation et remplacement de vitrage automobile", data.MAIN_PHONE_DISPLAY)
-    make_og("og-default.png", "Allo Brise de Glace", "Réparation et remplacement de vitrage automobile", "")
+    make_og("og-default.png", "Allo Bris de Glace", "Réparation et remplacement de vitrage automobile", "")
 
     render_sitemap(urls)
     print("Pages générées :")

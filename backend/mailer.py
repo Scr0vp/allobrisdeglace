@@ -6,7 +6,7 @@ import subprocess
 from email.message import EmailMessage
 from email.utils import formatdate
 
-SUBJECT = "Nouvelle demande de contact — Allo Brise de Glace"
+SUBJECT = "Nouvelle demande de contact — Allo Bris de Glace"
 
 FIELD_LABELS = [
     ("nom", "Nom"),

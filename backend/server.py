@@ -1,4 +1,4 @@
-"""API backend — ALLO BRISE DE GLACE.
+"""API backend — ALLO BRIS DE GLACE.
 
 Endpoints :
 - GET  /api/health   : contrôle de santé
@@ -32,7 +32,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("allobrisdeglace")
 
-app = FastAPI(title="ALLO BRISE DE GLACE — API", docs_url=None, redoc_url=None)
+app = FastAPI(title="ALLO BRIS DE GLACE — API", docs_url=None, redoc_url=None)
 api_router = APIRouter(prefix="/api")
 
 EMAIL_RE = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
@@ -207,7 +207,7 @@ async def security_headers(request: Request, call_next):
 
 @app.on_event("startup")
 async def on_startup():
-    logger.info("Démarrage de l'application ALLO BRISE DE GLACE")
+    logger.info("Démarrage de l'application ALLO BRIS DE GLACE")
     try:
         count = await lead_store.count()
         logger.info("Connexion à la base de données établie (%s leads)", count)

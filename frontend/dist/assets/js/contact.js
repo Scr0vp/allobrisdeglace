@@ -1,4 +1,4 @@
-/* ALLO BRISE DE GLACE — formulaire de contact
+/* ALLO BRIS DE GLACE — formulaire de contact
    Validation côté client (français) + envoi à l'API /api/contact. */
 (function () {
   "use strict";

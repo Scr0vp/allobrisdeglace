@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ALLO BRISE DE GLACE — feuille de style principale
+   ALLO BRIS DE GLACE — feuille de style principale
    Direction artistique : industriel automobile, marine profond, ambre.
    ========================================================================== */
 
@@ -1013,3 +1013,86 @@ a { color: inherit; }
 .eyebrow { color: #FF8A90; background: rgba(227, 6, 19, .14); border-color: rgba(227, 6, 19, .45); }
 .notfound-code { -webkit-text-stroke-color: rgba(227, 6, 19, .85); }
 .final-cta::after { background: linear-gradient(115deg, transparent 40%, rgba(227, 6, 19, .15)); }
+
+/* -------------------------------------------------------------
+   Production mobile sticky CTA fixes
+   ------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  /* Reserve space for the fixed CTA so it never covers page content. */
+  body.has-sticky {
+    padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Keep anchored sections below the fixed header when scrolled to. */
+  section[id],
+  [id].section {
+    scroll-margin-top: 100px;
+  }
+
+  /* Footer no longer needs to create the page-wide compensation itself. */
+  body.has-sticky .site-footer {
+    padding-bottom: 0;
+  }
+}
+
+/* Regional internal navigation */
+.regional-links-section .prose {
+  max-width: 1180px;
+}
+
+.regional-links-section .prose > p:first-child {
+  max-width: 76ch;
+}
+
+.regional-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.regional-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color .2s ease,
+    background-color .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.regional-link:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.regional-link:focus-visible {
+  outline: 3px solid rgba(0, 87, 168, .22);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .regional-links-list {
+    gap: 8px;
+  }
+
+  .regional-link {
+    min-height: 40px;
+    padding: 8px 13px;
+    font-size: .94rem;
+  }
+}
+

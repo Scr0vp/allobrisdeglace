@@ -1,4 +1,4 @@
-/* ALLO BRISE DE GLACE — interactions principales
+/* ALLO BRIS DE GLACE — interactions principales
    Défilement fluide (Lenis), révélations au scroll, parallaxe du hero,
    consentement cookies et suivi Google (Ads / Analytics) après accord. */
 (function () {
