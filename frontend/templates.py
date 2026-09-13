@@ -2,7 +2,7 @@
 """Fragments HTML partagés — ALLO BRIS DE GLACE.
 
 En-tête, pied de page, barre d'appel mobile, bannière cookies, icônes.
-Aucun lien vers les pages régionales dans l'en-tête ou le pied de page.
+Le pied de page expose les 8 zones régionales pour renforcer le maillage interne.
 """
 
 LOGO_SVG = (
@@ -68,6 +68,18 @@ SERVICE_ICONS = {
 def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
          page_key="", body_class=""):
     """Bloc <head> complet + ouverture du <body> (langue française)."""
+    regional_css = """
+<style>
+@media (min-width: 900px) {
+  body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
+}
+.sticky-cta .sticky-btn-call { flex: 1.3; }
+.sticky-cta .sticky-btn-wa { flex: .7; }
+@media (max-width: 899px) {
+  body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
+}
+</style>
+"""
     return f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -90,6 +102,7 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/main.css">
+{regional_css}
 {jsonld}
 </head>
 <body data-page="{page_key}" class="{body_class}">
@@ -126,6 +139,19 @@ def header(phone_display, phone_tel):
 
 
 def footer():
+    regions = [
+        ("ile-de-france", "Île-de-France"),
+        ("nord-ouest", "Nord-Ouest"),
+        ("nord-est", "Nord-Est"),
+        ("sud-ouest", "Sud-Ouest"),
+        ("sud-est", "Sud-Est"),
+        ("geneve", "Genève"),
+        ("montreal", "Montréal"),
+        ("belgique", "Belgique"),
+    ]
+    region_links = "".join(
+        f'<a href="/{slug}/">{name}</a>' for slug, name in regions
+    )
     return """<footer class="site-footer" data-testid="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -139,6 +165,10 @@ def footer():
       <a href="/contactez-nous/" data-testid="footer-contact-link">Contactez-nous</a>
       <a href="/mentions-legales-cgu/" data-testid="footer-legal-link">Mentions légales / CGU</a>
     </nav>
+  </div>
+  <div class="footer-regions">
+    <p class="footer-regions-title">Nos zones d’intervention</p>
+    <nav class="footer-regions-links" aria-label="Zones d’intervention">""" + region_links + """</nav>
   </div>
   <div class="footer-legal">
     <p>© 2026 Allo Bris de Glace — Neutra Group. Tous droits réservés.</p>
@@ -182,4 +212,28 @@ def scripts(extra=""):
     )
     if extra:
         out += f'<script src="{extra}" defer></script>\n'
+    out += '''<script>
+(function () {
+  var waText = "Bonjour, j'ai un impact sur mon pare-brise, voici une photo";
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function (link) {
+    try {
+      var url = new URL(link.href, window.location.origin);
+      if (!url.searchParams.get('text')) url.searchParams.set('text', waText);
+      link.href = url.toString();
+    } catch (e) {}
+  });
+
+  var page = document.body && document.body.getAttribute('data-page');
+  if (page && page !== 'accueil' && page !== 'contact') {
+    var seo = document.querySelector('[data-testid="seo-section"]');
+    if (seo && !document.querySelector('[data-testid="regional-modalities"]')) {
+      var section = document.createElement('section');
+      section.className = 'section section--seo regional-modalities-section';
+      section.setAttribute('data-testid', 'regional-modalities');
+      section.innerHTML = '<div class="section-head reveal"><p class="chapter"><span class="chapter-num">05B</span><span class="chapter-label">Prise de rendez-vous</span></p><h2 class="section-title">Délai et modalités d’intervention</h2></div><div class="prose reveal"><p>Le délai et la modalité d’intervention sont confirmés lors de la prise de rendez-vous selon votre zone, le type de vitrage, le véhicule et la disponibilité.</p><p>Lors de votre appel, nous vous indiquons le créneau proposé et les informations utiles avant l’intervention.</p></div>';
+      seo.parentNode.insertBefore(section, seo.nextSibling);
+    }
+  }
+})();
+</script>\n'''
     return out + "</body>\n</html>\n"
