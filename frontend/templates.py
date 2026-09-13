@@ -77,7 +77,7 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 @media (max-width: 899px) {
   body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
 }
-.footer-regions { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); }
+.footer-regions { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); }\n.footer-legal { padding-top: 16px; }
 .footer-regions-title { margin: 0 0 10px; font-weight: 700; }
 .footer-regions-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .footer-regions-links a { color: inherit; text-decoration: none; }
@@ -170,11 +170,11 @@ def footer():
       <a href="/mentions-legales-cgu/" data-testid="footer-legal-link">Mentions légales / CGU</a>
     </nav>
   </div>
-  <div class="footer-regions">
+  <div class="footer-inner footer-regions">
     <p class="footer-regions-title">Nos zones d’intervention</p>
     <nav class="footer-regions-links" aria-label="Zones d’intervention">""" + region_links + """</nav>
   </div>
-  <div class="footer-legal">
+  <div class="footer-inner footer-legal">
     <p>© 2026 Allo Bris de Glace — Neutra Group. Tous droits réservés.</p>
   </div>
 </footer>
