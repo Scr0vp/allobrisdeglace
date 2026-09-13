@@ -470,8 +470,6 @@ def render_contact():
         <a class="btn btn-primary btn-lg" href="tel:{data.MAIN_PHONE_TEL}" data-testid="contact-call-cta" data-track="call">{tpl.ICON_PHONE}<strong>{esc(data.MAIN_PHONE_DISPLAY)}</strong></a>
       </div>
       <div class="contact-card">
-      </div>
-      <div class="contact-card">
         <h2>Votre demande</h2>
         <p>Vos informations servent uniquement à traiter votre demande de contact, conformément à notre politique de confidentialité.</p>
       </div>
