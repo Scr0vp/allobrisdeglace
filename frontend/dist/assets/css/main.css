@@ -76,7 +76,7 @@ a { color: inherit; }
 ::selection { background: var(--blue-300); color: var(--white); }
 
 :focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 3px solid rgba(143, 176, 212, .30);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -199,12 +199,12 @@ a { color: inherit; }
   position: absolute;
   left: 0; right: 0; bottom: -2px;
   height: 2px;
-  background: var(--amber);
+  background: var(--blue-300);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .22s ease;
 }
-.main-nav a:hover { color: var(--navy); }
+.main-nav a:hover { color: var(--blue-300); }
 .main-nav a:hover::after { transform: scaleX(1); }
 
 .header-phone {
@@ -221,7 +221,7 @@ a { color: inherit; }
   border-radius: 999px;
   transition: background-color .18s ease, transform .18s ease;
 }
-.header-phone:hover { background: var(--amber); transform: translateY(-1px); }
+.header-phone:hover { background: var(--red-500-hover); transform: translateY(-1px); }
 .header-phone .icon { color: var(--blue-300); transition: color .18s ease; }
 .header-phone:hover .icon { color: var(--white); }
 
@@ -275,7 +275,7 @@ a { color: inherit; }
   transition: color .18s ease, padding-left .18s ease;
 }
 .mobile-menu a:last-child { border-bottom: 0; }
-.mobile-menu a:hover, .mobile-menu a:focus-visible { color: var(--amber); padding-left: 10px; }
+.mobile-menu a:hover, .mobile-menu a:focus-visible { color: var(--blue-300); padding-left: 10px; }
 @keyframes menu-in {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -333,7 +333,7 @@ a { color: inherit; }
   font-size: .78rem;
   text-transform: uppercase;
   letter-spacing: .18em;
-  color: var(--amber);
+  color: var(--blue-300);
   background: rgba(143, 176, 212, .10);
   border: 1px solid rgba(143, 176, 212, .35);
   border-radius: 999px;
@@ -430,12 +430,12 @@ a { color: inherit; }
   border-radius: 999px;
   box-shadow: var(--shadow-md);
 }
-.hero-badge .icon { color: var(--emerald); }
+.hero-badge .icon { color: var(--blue-300); }
 
 /* --------------------------------------------------------------- marquee */
 .marquee {
-  background: var(--amber);
-  color: var(--navy);
+  background: var(--navy-900);
+  color: var(--white);
   overflow: hidden;
   padding: 13px 0;
   border-block: 1px solid rgba(11, 21, 40, .15);
@@ -487,7 +487,7 @@ a { color: inherit; }
   font-size: 1.9rem;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.3px var(--amber);
+  -webkit-text-stroke: 1.3px var(--blue-300);
 }
 .chapter-label {
   font-family: var(--font-display);
@@ -522,7 +522,7 @@ a { color: inherit; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--amber);
+  background: var(--blue-300);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .3s ease;
@@ -533,8 +533,8 @@ a { color: inherit; }
   width: 46px; height: 46px;
   display: grid;
   place-items: center;
-  background: var(--navy);
-  color: var(--amber);
+  background: var(--navy-800);
+  color: var(--blue-300);
   border-radius: 12px;
   margin-bottom: 18px;
 }
@@ -555,7 +555,7 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 1.5rem;
-  color: var(--amber);
+  color: var(--blue-300);
   line-height: 1;
 }
 .benefit h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
@@ -594,8 +594,8 @@ a { color: inherit; }
 .section--seo .prose { max-width: 76ch; }
 .prose p { color: #334155; margin-bottom: 1.15rem; line-height: 1.78; }
 .prose .coverage {
-  border-left: 3px solid var(--amber);
-  background: var(--amber-soft);
+  border-left: 3px solid var(--blue-300);
+  background: rgba(143, 176, 212, .10);
   border-radius: 0 10px 10px 0;
   padding: 14px 18px;
   font-size: .95rem;
@@ -603,7 +603,7 @@ a { color: inherit; }
 .prose--legal h2 { font-size: 1.35rem; margin: 2.4rem 0 .9rem; }
 .prose--legal h2:first-child { margin-top: 0; }
 .prose--legal ul { color: #334155; line-height: 1.8; padding-left: 1.2rem; }
-.prose--legal a { color: var(--amber); font-weight: 600; }
+.prose--legal a { color: var(--blue-300); font-weight: 600; }
 
 /* FAQ */
 .faq-list { display: grid; gap: 12px; max-width: 860px; }
@@ -614,7 +614,7 @@ a { color: inherit; }
   overflow: hidden;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-.faq-item[open] { border-color: rgba(227, 6, 19, .5); box-shadow: var(--shadow-sm); }
+.faq-item[open] { border-color: rgba(36, 69, 110, .65); box-shadow: var(--shadow-sm); }
 .faq-item summary {
   display: flex;
   align-items: center;
@@ -629,7 +629,7 @@ a { color: inherit; }
   color: var(--navy);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-chevron { transition: transform .25s ease; color: var(--amber); }
+.faq-chevron { transition: transform .25s ease; color: var(--blue-300); }
 .faq-item[open] .faq-chevron { transform: rotate(180deg); }
 .faq-answer { padding: 0 22px 20px; color: var(--muted); font-size: .95rem; line-height: 1.7; }
 
@@ -692,7 +692,7 @@ a { color: inherit; }
   font-size: .92rem;
   transition: color .18s ease;
 }
-.footer-nav a:hover { color: var(--amber); }
+.footer-nav a:hover { color: var(--blue-300); }
 .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, .07);
   padding: 20px;
@@ -858,7 +858,7 @@ a { color: inherit; }
 .field { display: flex; flex-direction: column; gap: 7px; }
 .field:nth-child(9), .field--consent { grid-column: 1 / -1; }
 .field label { font-weight: 600; font-size: .9rem; color: var(--navy); }
-.required { color: var(--amber); }
+.required { color: var(--blue-300); }
 .optional { color: var(--faint); font-weight: 400; font-size: .82rem; }
 .field input, .field select, .field textarea {
   font: inherit;
@@ -872,9 +872,9 @@ a { color: inherit; }
 }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
-  border-color: var(--amber);
+  border-color: var(--blue-300);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(227, 6, 19, .15);
+  box-shadow: 0 0 0 3px rgba(143, 176, 212, .20);
 }
 .field [aria-invalid="true"] { border-color: var(--error); background: #FEF2F2; }
 .field textarea { resize: vertical; min-height: 120px; }
@@ -892,7 +892,7 @@ a { color: inherit; }
 .checkbox input {
   width: 20px; height: 20px;
   margin-top: 2px;
-  accent-color: var(--amber);
+  accent-color: var(--red-500);
   flex: none;
 }
 
@@ -1003,80 +1003,140 @@ a { color: inherit; }
   .cookie-banner { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 }
 
-/* ============ Identité bleu / blanc / rouge — ajustements composants ==== */
-/* En-tête : bouton téléphone bleu, navigation bleue au survol */
-.header-phone { background: var(--color-primary); }
-.header-phone:hover { background: var(--color-primary-dark); }
-.header-phone .icon, .header-phone:hover .icon { color: var(--color-white); }
-.main-nav a:hover { color: var(--color-primary); }
-.main-nav a::after { background: var(--color-primary); }
+/* ============ Allo Bris de Glace — identité visuelle ================== */
 
-/* Boutons : ombres assorties au rouge d'action et au vert WhatsApp */
-.btn-primary { box-shadow: 0 8px 20px -8px rgba(227, 6, 19, .45); }
-.btn-primary:hover { box-shadow: 0 14px 28px -10px rgba(227, 6, 19, .5); }
-.btn-whatsapp { box-shadow: 0 8px 20px -8px rgba(37, 211, 102, .45); }
-
-/* Bandeau défilant : bleu */
-.marquee { background: var(--color-primary); color: var(--color-white); border-color: rgba(255, 255, 255, .18); }
-.marquee-dot { background: var(--color-white); }
-
-/* Icônes et accents bleus */
-.card-icon { background: var(--color-primary-light); color: var(--color-primary); }
-.benefit-index { color: var(--color-primary); }
-.faq-chevron { color: var(--color-primary); }
-.faq-item summary { color: var(--color-primary-dark); }
-.faq-item[open] { border-color: var(--color-primary); }
-.hero-badge .icon { color: var(--color-primary); }
-.trust-list .icon { color: #9CD2F5; }
-.prose .coverage { border-left-color: var(--color-primary); background: var(--color-primary-light); }
-.prose--legal a { color: var(--color-primary); }
-
-/* Sections alternées : bleu très clair */
-.section--alt { background: var(--color-primary-light); }
-
-/* Formulaire : focus bleu (erreurs et envoi restent rouges via .btn-primary) */
-.field input:focus, .field select:focus, .field textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 87, 168, .15);
+/* Header / navigation */
+.header-phone {
+  background: var(--red-500);
 }
-.checkbox input { accent-color: var(--color-primary); }
-:focus-visible { outline-color: var(--color-primary); }
+.header-phone:hover {
+  background: var(--red-500-hover);
+}
+.header-phone .icon,
+.header-phone:hover .icon {
+  color: var(--white);
+}
+.main-nav a:hover {
+  color: var(--blue-300);
+}
+.main-nav a::after {
+  background: var(--blue-300);
+}
 
-/* Menu mobile : panneau blanc, liens foncés, survol bleu */
-.mobile-menu { background: var(--color-white); border-bottom: 1px solid var(--line); }
-.mobile-menu a { color: var(--color-text); border-bottom-color: var(--line); }
-.mobile-menu a:hover, .mobile-menu a:focus-visible { color: var(--color-primary); }
-.menu-toggle .bar { background: var(--color-primary-dark); }
-.menu-toggle:hover { border-color: var(--color-primary); }
+/* CTA principal : rouge réservé à l'action */
+.btn-primary {
+  box-shadow: 0 8px 20px -8px rgba(201, 75, 63, .45);
+}
+.btn-primary:hover {
+  box-shadow: 0 14px 28px -10px rgba(201, 75, 63, .5);
+}
 
-/* Pied de page : bleu foncé */
-.site-footer { background: var(--color-primary-dark); }
+/* WhatsApp : fond transparent, icône verte uniquement */
+.btn-whatsapp {
+  box-shadow: none;
+}
 
-/* Décors : rouge en accent maîtrisé uniquement */
-.eyebrow { color: #FF8A90; background: rgba(227, 6, 19, .14); border-color: rgba(227, 6, 19, .45); }
-.notfound-code { -webkit-text-stroke-color: rgba(227, 6, 19, .85); }
-.final-cta::after { background: linear-gradient(115deg, transparent 40%, rgba(227, 6, 19, .15)); }
+/* Bandeau */
+.marquee {
+  background: var(--navy-900);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, .18);
+}
+.marquee-dot {
+  background: var(--white);
+}
 
-/* -------------------------------------------------------------
-   Production mobile sticky CTA fixes
-   ------------------------------------------------------------- */
+/* Icônes / accents */
+.card-icon {
+  background: rgba(143, 176, 212, .14);
+  color: var(--blue-300);
+}
+.benefit-index {
+  color: var(--blue-300);
+}
+.faq-chevron {
+  color: var(--blue-300);
+}
+.faq-item summary {
+  color: var(--navy-900);
+}
+.faq-item[open] {
+  border-color: rgba(36, 69, 110, .65);
+  box-shadow: var(--shadow-sm);
+}
+.hero-badge .icon {
+  color: var(--blue-300);
+}
+.trust-list .icon {
+  color: var(--blue-300);
+}
+.prose .coverage {
+  border-left-color: var(--blue-300);
+  background: rgba(143, 176, 212, .10);
+}
+.prose--legal a {
+  color: var(--blue-300);
+}
 
-@media (max-width: 899px) {
-  /* Reserve space for the fixed CTA so it never covers page content. */
-  body.has-sticky {
-    padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px));
-  }
+/* Sections alternées */
+.section--alt {
+  background: rgba(143, 176, 212, .08);
+}
 
-  /* Keep anchored sections below the fixed header when scrolled to. */
-  section[id],
-  [id].section {
-    scroll-margin-top: 100px;
-  }
+/* Formulaire */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--blue-300);
+  box-shadow: 0 0 0 3px rgba(143, 176, 212, .20);
+}
+.checkbox input {
+  accent-color: var(--red-500);
+}
+:focus-visible {
+  outline-color: var(--blue-300);
+}
 
-  /* Footer no longer needs to create the page-wide compensation itself. */
-  body.has-sticky .site-footer {
-    padding-bottom: 0;
-  }
+/* Menu mobile */
+.mobile-menu {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.mobile-menu a {
+  color: var(--color-text);
+  border-bottom-color: var(--line);
+}
+.mobile-menu a:hover,
+.mobile-menu a:focus-visible {
+  color: var(--blue-300);
+}
+.menu-toggle .bar {
+  background: var(--navy-900);
+}
+.menu-toggle:hover {
+  border-color: var(--blue-300);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy-900);
+}
+
+/* Accents visuels : aucune ancienne couleur rouge */
+.eyebrow {
+  color: var(--blue-300);
+  background: rgba(143, 176, 212, .10);
+  border-color: rgba(143, 176, 212, .30);
+}
+.notfound-code {
+  -webkit-text-stroke-color: rgba(143, 176, 212, .85);
+}
+.final-cta::after {
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(143, 176, 212, .12)
+  );
 }
 
 /* Regional internal navigation */
@@ -1103,7 +1163,7 @@ a { color: inherit; }
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--white);
-  color: var(--color-primary-dark);
+  color: var(--navy-900);
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -1116,26 +1176,35 @@ a { color: inherit; }
 }
 
 .regional-link:hover {
-  border-color: var(--color-primary);
-  background: var(--color-primary-light);
-  color: var(--color-primary-dark);
+  border-color: var(--blue-300);
+  background: rgba(143, 176, 212, .10);
+  color: var(--navy-900);
   transform: translateY(-1px);
 }
 
 .regional-link:focus-visible {
-  outline: 3px solid rgba(0, 87, 168, .22);
+  outline: 3px solid rgba(143, 176, 212, .25);
   outline-offset: 2px;
 }
 
-@media (max-width: 640px) {
-  .regional-links-list {
-    gap: 8px;
+/* -------------------------------------------------------------
+   Production mobile sticky CTA fixes
+   ------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  /* Reserve space for the fixed CTA so it never covers page content. */
+  body.has-sticky {
+    padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px));
   }
 
-  .regional-link {
-    min-height: 40px;
-    padding: 8px 13px;
-    font-size: .94rem;
+  /* Keep anchored sections below the fixed header when scrolled to. */
+  section[id],
+  [id].section {
+    scroll-margin-top: 100px;
+  }
+
+  /* Footer no longer needs to create the page-wide compensation itself. */
+  body.has-sticky .site-footer {
+    padding-bottom: 0;
   }
 }
-
