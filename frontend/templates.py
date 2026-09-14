@@ -7,10 +7,10 @@ Le pied de page expose les 8 zones régionales pour renforcer le maillage intern
 
 LOGO_SVG = (
     '<svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">'
-    '<rect width="64" height="64" rx="14" fill="#003B73"/>'
-    '<path d="M14 44 L22 18 H42 L50 44 Z" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round"/>'
-    '<path d="M32 22 L28.5 30.5 L34 30.5 L30 40" fill="none" stroke="#E30613" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
-    "</svg>"
+    '<rect width="64" height="64" rx="14" fill="#0B1E37"/>'
+    '<path d="M37 9 L18 35 H30 L26 55 L46 27 H34 L37 9 Z" '
+    'fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="round"/>'
+    '</svg>'
 )
 
 ICON_PHONE = (
