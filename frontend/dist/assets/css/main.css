@@ -705,6 +705,7 @@ a { color: inherit; }
 @media (max-width: 899px) {
   .sticky-cta {
     display: flex;
+    align-items: center;
     gap: 10px;
     position: fixed;
     left: 0; right: 0; bottom: 0;

@@ -72,8 +72,9 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 @media (min-width: 900px) {
   body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
 }
+.sticky-cta { align-items: center; }
 .sticky-cta .sticky-btn-call { flex: 1.3; }
-.sticky-cta .sticky-btn-wa { flex: .7; }
+.sticky-cta .sticky-btn-wa { flex: 0 0 44px; width: 44px; min-width: 44px; height: 44px; min-height: 44px; max-width: 44px; max-height: 44px; padding: 0; border-radius: 50%; }
 @media (max-width: 899px) {
   body[data-page]:not([data-page="accueil"]):not([data-page="contact"]) .hero-ctas a[data-testid="hero-quote-cta"] { display: none; }
 }
@@ -105,7 +106,7 @@ def head(title, desc, canonical, og_image, jsonld="", og_locale="fr_FR",
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css?v=20260914">
 {regional_css}
 {jsonld}
 </head>
